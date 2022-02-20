@@ -1,0 +1,18 @@
+@mixin profile($border-color: #e2e2e2) {
+  display: inline-block;
+  border: $base-border-thickness * 2 $border-color solid;
+  border-radius: 50%;
+}
+
+.profile {
+  @include btn;
+}
+
+@each $key, $val in $colors {
+  .profile-#{$key} {
+    @include profile($val);
+    &:hover {
+      background-color: lighten($val, 5);
+    }
+  }
+}
