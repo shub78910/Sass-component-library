@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Using modals</h2>
+    <div>
+        <div class="modal">
+            <div class="bg-white modal-content mt-5 mb-5">
+                <div class="display-f justify-space-between bg-secondary-dark-2 p-1">
+                    <h4 class="font-lg">Modal Header</h4>
+                    <span onclick="closeModal()" class="modalClose text-black text-hover-secondary">&times;</span>
+                </div>
+                <div class="modal-content p-1">
+                    modal content=>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint itaque tempora libero blanditiis
+                    velit
+                    sapiente molestias debitis necessitatibus porro error quis, ipsum, commodi aspernatur quia eos
+                    veritatis
+                    nihil doloribus animi.
+                </div>
+            </div>
+        </div>
+    </div>
+    <button onclick="openModal()" class="modalBtn btn-secondary mt-5 mb-2">Open modal</button>
+    <script>
+        const modal = document.querySelector(".modal")
+        const openModal = () => {
+            console.log("clikc");
+            modal.style.display = "block"
+        }
+        const closeModal = () => {
+            modal.style.display = "none"
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+</body>
+
+</html>
